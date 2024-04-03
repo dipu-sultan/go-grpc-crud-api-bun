@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres  # Corrected image name
+    container_name: postgres  # Corrected container name
+    environment:
+      POSTGRES_USER: roots
+      POSTGRES_PASSWORD: 1234567
+      POSTGRES_DB: test_database
+    ports:
+      - "543210:5432"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
